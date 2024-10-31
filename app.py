@@ -5,7 +5,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecretkey'  # Update this for security
+app.config['SECRET_KEY'] = 'your_secret_key'  # Replace with a strong secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///quitter.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
