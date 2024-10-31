@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr><th>Rank</th><th>Habit</th><th>Days Quit</th><th>Current Streak</th><th>30-Day Consistency</th></tr>
+    </thead>
+    <tbody>
+        {% for quit in quits %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ quit.habit }}</td>
+            <td>{{ quit.days_quit }}</td>
+            <td>{{ quit.login_streak }} days</td>
+            <td>{{ quit.consistency_30_days }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
