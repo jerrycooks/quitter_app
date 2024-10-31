@@ -1,0 +1,18 @@
+<h3>Select a New Habit to Quit</h3>
+{% if quits|length < 3 %}
+<form method="POST" action="/dashboard">
+    <select name="habit" required>
+        {% for habit in habits %}
+            {% if habit not in [q.habit for q in quits] %}
+                <option value="{{ habit }}">{{ habit }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <input type="date" name="quit_date" required>
+    <textarea name="why_quit" required></textarea>
+    <textarea name="goal_quit" required></textarea>
+    <button type="submit">Add Quit</button>
+</form>
+{% else %}
+<p>You've reached the limit of 3 active quits.</p>
+{% endif %}
